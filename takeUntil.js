@@ -1,5 +1,4 @@
-const takeUntil = (array, callback) => {
-  return array.slice(0, array.findIndex(callback))
+const takeUntil = (array, callback) => array.slice(0, array.findIndex(callback))
   // let final = [];
   // for (const value of array) {
   //   if(!callback(value)) {
@@ -8,7 +7,7 @@ const takeUntil = (array, callback) => {
   //     return final;
   //   }
   // }
-}
+
 
 const eqArrays = function(x, y) {
   if (x.length !== y.length) {
