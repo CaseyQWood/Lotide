@@ -1,3 +1,5 @@
+const { isArray } = require("util");
+
 const assertEqual = function(actual, expected) {
   if (actual === expected) {
     console.log(`Assertion Passed: ${actual} === ${expected}`);
@@ -8,23 +10,22 @@ const assertEqual = function(actual, expected) {
 
 
 const eqObjects = function(object1, object2) {
-  const obj1Length = Object.keys(object1).length
-  const obj2Length = Object.keys(object2).length
-  let iteration = 0
-  if (obj1Length === obj2Length) {
-    for (const index in object2) {
-      if (object2[index] === object1[index]) {
-        iteration += 1
-        if (iteration >= obj2Length) {
-          return true
-        }
-       } else {
-        iteration += 1
-        eqArrays(object1[index], object2[index])
-      }
-    }
+  let length1 = Object.keys(object1).length;
+  let length2 = Object.keys(object2).length;
+
+  if (length1 !== length2) {
+      return false;
   }
-  return false
+    for (const key in object2) {
+      if (Array.isArray(object1[key]) && Array.isArray(object1[key])) {
+        if ( !eqArrays(object1[key], object2[key]) ) {
+          return false;
+        }
+      } else if (object1[key] !== object1[key]) {  
+        return false;
+      } 
+    }
+  return true;
 };
 
 const eqArrays = function(x, y) {
@@ -44,19 +45,14 @@ const eqArrays = function(x, y) {
   return finalAsnwer;
 };
 
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-const cd2 = { c: "1", d: ["2", 3, 4] };
 const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
 const abc = { a: "1", b: "2", c: "3" };
+const ba = { b: "2", a: "1" };
 assertEqual(eqObjects(ab, abc), false);
 assertEqual(eqObjects(ab, ba), true)
-assertEqual(eqObjects(cd, cd2), false)
-assertEqual(eqObjects(cd, dc), true)
-// console.log(eqObjects(ab, ba));
 
-// eqObjects(cd, cd2)
-
-
-// eqObjects(cd, dc);
+const dc = { d: ["2", 3], c: "1" };
+const cd = { c: "1", d: ["2", 3] };
+const cd2 = { c: "1", d: ["2", 3, 4] };
+assertEqual(eqObjects(cd, cd2), false);
+assertEqual(eqObjects(cd, dc), true);
