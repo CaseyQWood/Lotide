@@ -1,34 +1,32 @@
-const assertObjectsEqual = function(actual, expected) {
+const assertObjectsEqual = (object1, object2) => {
   const inspect = require('util').inspect;
-  if (eqObjects(actual, expected)) {
-    console.log(`Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
+  if (eqObjects(object1, object2)) {
+    console.log(`Assertion Passed: ${inspect(object1)} === ${inspect(object2)}`);
   } else {
-    console.log(`Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
+    console.log(`Assertion Failed: ${inspect(object1)} !== ${inspect(object2)}`);
   }
 }
 
 
 const eqObjects = function(object1, object2) {
-  const obj1Length = Object.keys(object1).length
-  const obj2Length = Object.keys(object2).length
-  let iteration = 0
-  if (obj1Length === obj2Length) {
-    for (const index in object2) {
-      if (object2[index] === object1[index]) {
-        iteration += 1
-        if (iteration >= obj2Length) {
-          return true
-        }
-       } else {
-        iteration += 1
-        eqArrays(object1[index], object2[index])
-      }
-    }
+  let length1 = Object.keys(object1).length;
+  let length2 = Object.keys(object2).length;
+  if (length1 !== length2) {
+      return false;
   }
-  return object1
+    for (const key in object2) {
+      if (Array.isArray(object1[key]) && Array.isArray(object1[key])) {
+        if ( !eqArrays(object1[key], object2[key]) ) {
+          return false;
+        }
+      } else if (object1[key] !== object1[key]) {  
+        return false;
+      } 
+    }
+  return true;
 };
 
-const eqArrays = function(x, y) {
+const eqArrays = (x, y) => {
   let finalAsnwer = '';
   if (x.length === y.length) {
     for (let i = 0; i < x.length; i++) {
