@@ -27,12 +27,8 @@ const eqArrays = function(x, y) {
   return true;
 };
 
+module.exports = eqArrays
 
 // create a function called eqArrays
 //loop through each array and compair each index 
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true)// => true
-assertEqual(eqArrays([1, 2, 3], [3, [2, 4], 1]), false); // => false
-
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true); // => true
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false); // => false
