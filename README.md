@@ -29,3 +29,12 @@ The following functions are currently implemented:
 * `function1(middle)`: this function will return the value of the middle index if length is odd and the middle two values if odd
 * `function2(head)`: will return just the first index of a array 
 * `function3(tail)`: will return all index except the first
+* `function3(map)`:
+* `function3(letterPossitions)`:
+* `function3(flatten)`:
+* `function3(findKeyByValue)`:
+* `function3(findKey)`:
+* `function3(eqObjects)`:
+* `function3(eqArrays)`:
+* `function3(countOnly)`:
+* `function3(countLetters)`:

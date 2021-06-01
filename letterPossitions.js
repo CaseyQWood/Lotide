@@ -1,3 +1,5 @@
+module.exports = letterPossitions
+
 const letterPositions = function(sentence) {
   const results = {};
   for (let i = 0; i < sentence.length; i++) {

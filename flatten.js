@@ -1,3 +1,5 @@
+module.exports = flatten
+
 const flatten = function(input){
   let final = [];
   for (var index of input) {

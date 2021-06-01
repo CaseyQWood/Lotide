@@ -1,3 +1,5 @@
+module.exports = findKey
+
 const findKey = (obj, funk) => {
   for (const key in obj) {
     if (funk(obj[key])) {

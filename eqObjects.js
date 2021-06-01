@@ -14,7 +14,7 @@ const assertEqual = function(actual, expected) {
 // }
 
 
-
+module.exports = eqObjects
 
 
 const eqObjects = function(object1, object2) {
