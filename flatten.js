@@ -1,19 +1,16 @@
-module.exports = flatten
-
-const flatten = function(input){
+const flatten = (input) => {
   let final = [];
   for (var index of input) {
-    if(Array.isArray(index)) {
-      for( var dex of index) {
-        final.push(dex)
+    if (Array.isArray(index)) {
+      for (var dex of index) {
+        final.push(dex);
       }
     }
     else { 
-      final.push(index )
+      final.push(index);
     }
   }
-  console.log(final)
-}
+  return final;
+};
 
-
-flatten([1, 2, [3, 4], 5, [6]])
+module.exports = flatten;

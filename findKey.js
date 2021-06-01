@@ -1,4 +1,4 @@
-module.exports = findKey
+
 
 const findKey = (obj, funk) => {
   for (const key in obj) {
@@ -16,6 +16,8 @@ const assertEqual = function(actual, expected) {
     console.log(`Assertion Failed: ${actual} !== ${expected}`);
   }
 };
+
+module.exports = findKey
 
 assertEqual(findKey({
   "Blue Hill": { stars: 1 },

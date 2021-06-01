@@ -1,4 +1,4 @@
-module.exports = letterPossitions
+const assertEqualArray = require('./assertEqualArray');
 
 const letterPositions = function(sentence) {
   const results = {};
@@ -14,41 +14,9 @@ const letterPositions = function(sentence) {
   return results;
 };
 
-console.log(letterPositions("lighthouse in the house"))
-// const eqArrays = function(x, y) {
-//   if (x.length !== y.length) {
-//     return false
-//   }
-//   for (let i = 0; i < x.length; i++) {
-//     if (x[i] !== y[i]) {
-//       return false
-//     } 
-//   }
-//   return true;
-// };
+module.exports = letterPositions
 
 
-// const assertEqualArray = function(array1, array2) {
-//   if (eqArrays(array1, array2)) {
-//     console.log(`Assertion Passed: ${array1} === ${array2}`);
-//   } else {
-//     console.log(`Assertion Failed: ${array1} !== ${array2}`);
-//   }
-// };
+console.log(letterPositions("password"))
 
-// const eqArrays = function(x, y) {
-//   let finalAsnwer = '';
-//   if (x.length === y.length) {
-//     for (let i = 0; i < x.length; i++) {
-//       if (x[i] === y[i]) {
-//         finalAsnwer = true;
-//       }
-//       else {
-//         finalAsnwer = false;
-//       }
-//     }
-//   }
-//   else {finalAsnwer = false ;
-//   }
-//   console.log(finalAsnwer);
-// };
+

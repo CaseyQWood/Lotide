@@ -10,6 +10,7 @@ const eqObjects = require('./eqObjects');
 const eqArrays = require('./eqArrays');
 const countOnly = require('./countOnly');
 const countLetters = require('./countLetters');
+const without = require('./without');
 
 module.exports = { 
   head, 
@@ -23,7 +24,8 @@ module.exports = {
   eqObjects,
   eqArrays,
   countOnly,
-  countLetters
+  countLetters,
+  without,
 };
 
 
