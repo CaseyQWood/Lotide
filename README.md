@@ -12,11 +12,11 @@ This project was created and published by me as part of my learnings at Lighthou
 
 **Install it:**
 
-`npm install @username/lotide`
+`npm install @casey252/lotide`
 
 **Require it:**
 
-`const _ = require('@username/lotide');`
+`const _ = require('@casey252/lotide');`
 
 **Call it:**
 
@@ -26,6 +26,6 @@ This project was created and published by me as part of my learnings at Lighthou
 
 The following functions are currently implemented:
 
-* `function1(...)`: description
-* `function2(...)`: description
-* `function3(...)`: description
+* `function1(middle)`: this function will return the value of the middle index if length is odd and the middle two values if odd
+* `function2(head)`: will return just the first index of a array 
+* `function3(tail)`: will return all index except the first

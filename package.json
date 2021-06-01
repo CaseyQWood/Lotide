@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@casey252/lotide",
+  "version": "1.0.1",
+  "description": "Casey's lotide project for LHL",
   "main": "assertEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/CaseyQWood/Lotide.git"
   },
-  "author": "",
+  "author": "Casey W",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/CaseyQWood/Lotide/issues"
